@@ -1,0 +1,16 @@
+{
+  "scripts": {
+    "fix-java": "./format-java.sh",
+    "fix-swift": "swift-format format -i src/*.swift",
+    "fix": "prettier -w src/**/*.js",
+    "test-java": "javac -d build src/*.java && java --class-path build src.Test",
+    "test-swift": "swiftc -o build/base58 src/*.swift && ./build/base58",
+    "test": "node src/test.js && npm run test-java && npm run test-swift"
+  },
+  "dependencies": {
+    "base-x": "^4.0.0"
+  },
+  "devDependencies": {
+    "prettier": "^2.8.1"
+  }
+}
